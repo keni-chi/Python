@@ -1,0 +1,15 @@
+参考：
+python お天気apiから近日の天気を取得する
+https://qiita.com/shizuma/items/ad04e08ab31ba436d34e
+
+Pythonでpywapiを使ってYahoo! Weatherから天気情報を取得してツイートする方法
+http://azunobu.hatenablog.com/entry/2015/05/10/144818
+
+pywapi APIが使いたい
+http://takaaki.hatenablog.jp/entry/20171003/1506960995
+  pywapi-0.3.8へ移動
+  python setup.py build
+  python setup.py install
+
+Python で Twitter API にアクセス
+https://qiita.com/yubais/items/dd143fe608ccad8e9f85

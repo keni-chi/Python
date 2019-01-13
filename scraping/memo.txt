@@ -1,0 +1,7 @@
+参考：
+
+BeautifulSoup4の使い方
+http://python-remrin.hatenadiary.jp/entry/2017/05/01/152455
+
+PythonとBeautiful Soupでスクレイピング
+https://qiita.com/itkr/items/513318a9b5b92bd56185

@@ -1,0 +1,9 @@
+éQçl
+- Generator
+https://github.com/perenecabuto/json_schema_generator
+python setup.py install
+python jsonschema_generator.py record EdgeModel_schema.json json_schema_test.json
+
+- viewer
+http://jlblcc.github.io/json-schema-viewer/
+npm install -g grunt-cli

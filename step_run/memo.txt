@@ -1,0 +1,14 @@
+【Python】いつまでprintデバッグで消耗してるの？
+http://racchai.hatenablog.com/entry/2016/05/30/070000
+
+AtomでPythonプログラムを実行する方法 atom runner
+https://hajipro.com/python/atom-python
+
+ATOMでPython環境構築
+http://at.hatenadiary.com/entry/2017/07/02/001500
+
+★Hydrogenをインストールし、以下の環境変数を入れる。
+C:\Users\nagaharaken\AppData\Local\Continuum\Anaconda2;C:\Users\nagaharaken\AppData\Local\Continuum\Anaconda2\Scripts;C:\Users\nagaharaken\AppData\Local\Continuum\Anaconda2\Library\bin
+
+★Ctrl(Command)+Shift+Pでコマンドパレットを開き、"Hydrogen"と入力します。 すると"Hydrogen: Run Cell"というコマンドと、そのショートカットが現れます。
+→ctrl+alt+Enterで実行
