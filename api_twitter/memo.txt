@@ -1,0 +1,3 @@
+参考文献：
+Python で Twitter API にアクセス
+https://qiita.com/yubais/items/dd143fe608ccad8e9f85
