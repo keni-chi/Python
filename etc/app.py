@@ -1,3 +1,5 @@
+# coding: utf-8
+
 def os_path_append():
     """"method_os."""
     import os
@@ -18,6 +20,17 @@ def os_path_append():
     PathSampleChild.path_classmethod('test4')
     PathSampleChild.path_classmethod_child('test5')
     PathSampleChild().path_instancemethod('test6')
+
+    # フィールド操作
+    inst = PathSample('test1')
+    print(inst.data)
+    inst.data = 'test2'
+    print(inst.data)
+
+    # getter
+    inst = PathSample()
+    x = inst._get_indata()
+    print(x)
 
 
 def _urllib_request(url, body, headers, method):
@@ -264,6 +277,31 @@ def list_copy():
     print(z_list)
 
 
+def dict_into():
+    sample_data = {
+        "k1": {
+            "k2-1": "v2-1",
+            "k2-2": "v2-2"
+        }
+    }
+    print(sample_data)
+
+    sample_data['k_new1'] = 'v_new1'
+    print(sample_data)
+
+
+def arg_sample(x, *arg):
+    print('x: ' + x)
+    print(arg)
+    print(arg[0])
+
+
+def kwargs_sample(x, **kwargs):
+    print('x: ' + x)
+    print(kwargs)
+    print(kwargs['k1'])
+
+
 def main():
     # os_path_append
     print('os_path_append--------------------start')
@@ -313,14 +351,33 @@ def main():
     print('xpath_get_sample--------------------end')
 
     # excel_sample
-    print('excel_sample--------------------start')
-    excel_sample()
-    print('excel_sample--------------------end')
+    # print('excel_sample--------------------start')
+    # excel_sample()
+    # print('excel_sample--------------------end')
 
     # list_copy
     print('list_copy--------------------start')
     list_copy()
     print('list_copy--------------------end')
+
+    # dict_into
+    print('dict_into--------------------start')
+    dict_into()
+    print('dict_into--------------------end')
+
+    # args_sample
+    print('arg_sample--------------------start')
+    arg_sample('a', 1)
+    arg_sample('a', 2, 'a')
+    print('arg_sample--------------------end')
+
+    # kwargs_sample
+    print('kwargs_sample--------------------start')
+    kwargs_sample('a', k1=1)
+    kwargs_sample('a', k1=2, k2='a')
+    print('kwargs_sample--------------------end')
+
+
 
 if __name__ == '__main__':
     main()

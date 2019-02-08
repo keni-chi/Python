@@ -1,6 +1,11 @@
 class PathSample:
     """pathSample クラス."""
 
+    def __init__(self, data=None):
+            """__init__."""
+            self.data = data
+            self.indata = 'indata1'
+
     @classmethod
     def path_classmethod(cls, input):
         """path_classmethod."""
@@ -15,8 +20,13 @@ class PathSample:
         """_inner_method."""
         print('_inner_method')
 
+    def _get_indata(self):
+        """_get_indata."""
+        return self.indata
+
 class PathSampleChild(PathSample):
     """PathSampleChild クラス."""
+    
     @classmethod
     def path_classmethod(cls, input):
         """path_classmethod(over)."""
