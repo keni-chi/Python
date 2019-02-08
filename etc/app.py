@@ -248,6 +248,20 @@ def excel_sample():
     file.close()
 
 
+def list_copy():
+    x_list = [0, 1]
+    y_list = x_list[:]
+    z_list = ['a', 'b']
+    
+    print(x_list)
+    print(y_list)
+    print(z_list)
+    
+    x_list.extend(z_list)
+
+    print(x_list)
+    print(y_list)
+    print(z_list)
 
 
 def main():
@@ -256,15 +270,15 @@ def main():
     os_path_append()
     print('os_path_append--------------------end')
 
-    # urllib_request
-    print('urllib_request--------------------start')
-    urllib_request_sample()
-    print('urllib_request--------------------end')
-
-    # requests_sample
-    print('requests_sample--------------------start')
-    requests_sample()
-    print('requests_sample--------------------end')
+    # # urllib_request
+    # print('urllib_request--------------------start')
+    # urllib_request_sample()
+    # print('urllib_request--------------------end')
+    # 
+    # # requests_sample
+    # print('requests_sample--------------------start')
+    # requests_sample()
+    # print('requests_sample--------------------end')
 
     # read_json
     print('read_json--------------------start')
@@ -303,6 +317,10 @@ def main():
     excel_sample()
     print('excel_sample--------------------end')
 
+    # list_copy
+    print('list_copy--------------------start')
+    list_copy()
+    print('list_copy--------------------end')
 
 
 
