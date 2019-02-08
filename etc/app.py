@@ -322,7 +322,5 @@ def main():
     list_copy()
     print('list_copy--------------------end')
 
-
-
 if __name__ == '__main__':
     main()
