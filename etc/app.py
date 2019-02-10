@@ -4,7 +4,7 @@ def os_path_append():
     """"method_os."""
     import os
     import sys
-    sys.path.append(os.path.abspath('../etc/src/gpflibequipmentservice'))
+    sys.path.append(os.path.abspath('../etc'))
 
     # クラスのメソッド呼び出し
     from path_sample import PathSample
