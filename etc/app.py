@@ -104,7 +104,7 @@ def read_json():
     import json
 
     test_path = os.getcwd() + '/file/'
-    file_path001 = test_path + 'read_json.json'
+    file_path001 = test_path + 'input.json'
     f = open(file_path001)
     file_data001 = json.load(f)
     print(file_data001)
@@ -276,6 +276,16 @@ def list_copy():
     print(y_list)
     print(z_list)
 
+    print('deep copy------')
+    from copy import deepcopy
+    x = [[1, 2, 3], 4, 5]
+    y = deepcopy(x)
+    print(x)
+    print(y)
+    y[0][0] = 123
+    print(x)
+    print(y)
+
 
 def dict_into():
     sample_data = {
@@ -302,12 +312,133 @@ def kwargs_sample(x, **kwargs):
     print(kwargs['k1'])
 
 
+def yaml_sample():
+    import yaml
+    f = open("./file/input.yml", "r+")
+    data = yaml.load(f)
+    print(data)
+    f.close
+
+    f = open("file/output.yml", "w")
+    f.write(yaml.dump(data, default_flow_style=False))
+    f.close
+
+
+def csv_sample():
+    import csv
+    f = open('file/input.csv', 'r')
+    reader = csv.reader(f)
+    print('reader----------')
+    print(reader)
+    print('header----------')
+    header = next(reader) # ヘッダーを読み飛ばしたい時
+    print(header)
+    print('row----------')
+    for row in reader:
+        print (row)
+    f.close()
+
+    f = open('file/output.csv', 'w')
+    writer = csv.writer(f, lineterminator='\n')
+    list=[1,2,3]
+    array2d=[[11,12,13], [14,15,16]]
+    writer.writerow(list)
+    writer.writerows(array2d)
+    f.close()
+
+    import pandas as pd
+    df = pd.read_csv('file/input.csv')
+    print (df)
+    print (df['C'])
+
+
+def encode_decode():
+    import base64
+    import gzip
+    data = 'abcde'
+    print(data)
+    compress_b = gzip.compress(bytes(data, 'utf-8'))
+    encoded_b = base64.b64encode(compress_b)
+    encoded_str = encoded_b.decode()
+    print(type(encoded_str))
+    print(encoded_str)
+
+    decoded_b = base64.b64decode(encoded_str)
+    decompress_b = gzip.decompress(decoded_b)
+    print(decompress_b)
+    raw_data = decompress_b.decode()
+    print(raw_data)
+
+
+def calc_type():
+    x = 0.1 + 0.1 + 0.1
+    print(x)
+    print(type(x))
+
+    # 浮動小数点ではなく固定点少数として定義
+    # 小数点を文字列型で定義
+    from decimal import Decimal, ROUND_HALF_UP
+    x = Decimal('0.1') + Decimal('0.1') + Decimal('0.1')
+    print(x)
+    print(type(x))    
+
+    # 四捨五入
+    print(Decimal("123.456789").quantize(Decimal("0.01"),rounding=ROUND_HALF_UP))
+
+
+def dateteime_conv():
+    from datetime import datetime, timezone
+    t_str = '2019-01-01T13:15:55.123Z'
+    t_d = datetime.strptime(t_str, '%Y-%m-%dT%H:%M:%S.%fZ')
+    print(type(t_d))
+    print(t_d)
+    
+    t_raw = datetime.strftime(t_d, '%Y-%m-%dT%H:%M:%S.%fZ')[:-4] + 'Z'
+    print(type(t_raw))
+    print(t_raw)
+    
+    tz = timezone.utc
+    now = datetime.now(tz)
+    print(now)
+    now_conv = datetime.strftime(now, '%FT%T.%f')[:-3] + 'Z'
+    print(now_conv)
+
+
 def main():
+    # ################################################
+    # ファイル操作
+    # ################################################
+    # read_json
+    print('read_json--------------------start')
+    read_json()
+    print('read_json--------------------end')
+
+    # yaml_sample
+    print('yaml_sample--------------------start')
+    yaml_sample()
+    print('yaml_sample--------------------end')
+
+    # csv_sample
+    print('csv_sample--------------------start')
+    csv_sample()
+    print('csv_sample--------------------end')
+
+    # excel_sample
+    print('excel_sample--------------------start')
+    excel_sample()
+    print('excel_sample--------------------end')
+
+    # ################################################
+    # クラス、外部関数
+    # ################################################
     # os_path_append
     print('os_path_append--------------------start')
     os_path_append()
     print('os_path_append--------------------end')
 
+    # ################################################
+    # 通信
+    # ################################################
     # # urllib_request
     # print('urllib_request--------------------start')
     # urllib_request_sample()
@@ -318,11 +449,9 @@ def main():
     # requests_sample()
     # print('requests_sample--------------------end')
 
-    # read_json
-    print('read_json--------------------start')
-    read_json()
-    print('read_json--------------------end')
-
+    # ################################################
+    # 正規表現
+    # ################################################
     # check_datetime
     print('check_datetime--------------------start')
     print(check_datetime('2019-02-04T07:06:06.379Z', 'millisecond'))
@@ -335,6 +464,9 @@ def main():
     print(check_uuid('12345678-1234-1234-1234-abcde123456G'))
     print('check_uuid--------------------end')
 
+    # ################################################
+    # dict, list, str操作
+    # ################################################
     # in_xxxx
     print('in_xxxx--------------------start')
     in_xxxx()
@@ -349,11 +481,6 @@ def main():
     print('xpath_get_sample--------------------start')
     xpath_get_sample()
     print('xpath_get_sample--------------------end')
-
-    # excel_sample
-    # print('excel_sample--------------------start')
-    # excel_sample()
-    # print('excel_sample--------------------end')
 
     # list_copy
     print('list_copy--------------------start')
@@ -376,6 +503,28 @@ def main():
     kwargs_sample('a', k1=1)
     kwargs_sample('a', k1=2, k2='a')
     print('kwargs_sample--------------------end')
+
+    # ################################################
+    # 変換
+    # ################################################
+    # encode_decode
+    print('encode_decode--------------------start')
+    encode_decode()
+    print('encode_decode--------------------end')
+
+    print('dateteime_conv--------------------start')
+    dateteime_conv()
+    print('dateteime_conv--------------------end')
+
+    # ################################################
+    # 小数
+    # ################################################
+    # calc_type
+    print('calc_type--------------------start')
+    calc_type()
+    print('calc_type--------------------end')
+    
+
 
 
 
