@@ -14,3 +14,6 @@ deactivate
   source ~/{venv名}/bin/activate
 1. .bashrcに以下を追加。（~/Toolに、シェルが作成している例）  
   source ~/Tool/{シェル名}.sh
+
+### requirements
+pip install -r requirements/dev.txt
