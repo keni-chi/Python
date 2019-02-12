@@ -18,6 +18,9 @@ deactivate
 ### requirements
 pip install -r requirements/dev.txt
 
+### freezeによる出力   
+pip freeze > requirements.txt   
+
 ### Pipenv 
 - 手順
   - 準備   
