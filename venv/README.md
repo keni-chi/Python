@@ -15,11 +15,14 @@ deactivate
 1. .bashrcに以下を追加。（~/Toolに、シェルが作成している例）  
   source ~/Tool/{シェル名}.sh
 
+### installコマンド  
+python setup.py install  
+
 ### requirements
 pip install -r requirements/dev.txt
 
 ### freezeによる出力   
-pip freeze > requirements.txt   
+pip freeze > requirements.txt     
 
 ### Pipenv 
 - 手順

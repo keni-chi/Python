@@ -404,6 +404,15 @@ def dateteime_conv():
     print(now_conv)
 
 
+def ujson_sample():
+    import ujson
+    data = {"key": "value"}
+    x = ujson.dumps(data)
+    print(x)
+    y = ujson.loads(x)
+    print(type(y))
+
+
 def main():
     # ################################################
     # ファイル操作
@@ -503,6 +512,11 @@ def main():
     kwargs_sample('a', k1=1)
     kwargs_sample('a', k1=2, k2='a')
     print('kwargs_sample--------------------end')
+
+    # ujson_sample
+    print('ujson_sample--------------------start')
+    ujson_sample()
+    print('ujson_sample--------------------end')
 
     # ################################################
     # 変換
