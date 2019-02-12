@@ -84,3 +84,10 @@ pytestのオプションなどを設定しておくことができる。
 参考: https://qiita.com/giginet/items/1f965ba6d8077f6399b8
 
 
+### tox.ini  
+flake8-docstirngsの場合、以下例のようにtox.iniを作成する。  
+```
+[flake8]
+max-line-length=400
+ignore=D104
+```
