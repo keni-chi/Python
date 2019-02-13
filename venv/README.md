@@ -24,7 +24,7 @@ pip install -r requirements/dev.txt
 ### freezeによる出力   
 pip freeze > requirements.txt     
 
-### Pipenv 
+### Pipenv
 - 手順
   - 準備   
   pip install pipenv  
@@ -46,7 +46,7 @@ pip freeze > requirements.txt
   /home/ec2-user/.local/share/virtualenvs/のsite-packages配下にインストールされる   
 
   - pipfileのパッケージを一括インストール  
-    activateする
+    activateする  
     pipenv install
 
   - activate   
