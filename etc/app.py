@@ -81,7 +81,19 @@ def requests_sample():
     print(r)
     # print(r.content)
     # print(r.text)
-    # ?rint(r.json)
+    # print(r.json)
+
+    print('post---------')
+    r = requests.post('https://httpbin.org/post', data = {'key':'value'})
+    print(r.content)
+
+    print('put---------')
+    r = requests.put('https://httpbin.org/put', data = {'key':'value'})
+    print(r.content)
+
+    print('delete---------')
+    r = requests.delete('https://httpbin.org/delete')
+    print(r.content)
 
 
 def urllib_request_sample():
@@ -265,11 +277,11 @@ def list_copy():
     x_list = [0, 1]
     y_list = x_list[:]
     z_list = ['a', 'b']
-    
+
     print(x_list)
     print(y_list)
     print(z_list)
-    
+
     x_list.extend(z_list)
 
     print(x_list)
@@ -380,7 +392,7 @@ def calc_type():
     from decimal import Decimal, ROUND_HALF_UP
     x = Decimal('0.1') + Decimal('0.1') + Decimal('0.1')
     print(x)
-    print(type(x))    
+    print(type(x))
 
     # 四捨五入
     print(Decimal("123.456789").quantize(Decimal("0.01"),rounding=ROUND_HALF_UP))
@@ -392,11 +404,11 @@ def dateteime_conv():
     t_d = datetime.strptime(t_str, '%Y-%m-%dT%H:%M:%S.%fZ')
     print(type(t_d))
     print(t_d)
-    
+
     t_raw = datetime.strftime(t_d, '%Y-%m-%dT%H:%M:%S.%fZ')[:-4] + 'Z'
     print(type(t_raw))
     print(t_raw)
-    
+
     tz = timezone.utc
     now = datetime.now(tz)
     print(now)
@@ -452,11 +464,11 @@ def main():
     # print('urllib_request--------------------start')
     # urllib_request_sample()
     # print('urllib_request--------------------end')
-    # 
-    # # requests_sample
-    # print('requests_sample--------------------start')
-    # requests_sample()
-    # print('requests_sample--------------------end')
+    #
+    # requests_sample
+    print('requests_sample--------------------start')
+    requests_sample()
+    print('requests_sample--------------------end')
 
     # ################################################
     # 正規表現
@@ -537,7 +549,7 @@ def main():
     print('calc_type--------------------start')
     calc_type()
     print('calc_type--------------------end')
-    
+
 
 
 
