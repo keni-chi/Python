@@ -1,7 +1,13 @@
-# venv
+# env
 
-## 概要
-venvコマンドについて以下に示す。
+## 概要  
+envについて以下に示す。   
+- virtualenv ...2系   
+- venv...3系   
+- pyenv...Pythonの複数バージョンを手軽に統一管理できる  
+- pipenv...Pipfileを使う  
+
+## venv  
 
 ### コマンド
 python3 -m venv .venv  
@@ -24,7 +30,7 @@ pip install -r requirements/dev.txt
 ### freezeによる出力   
 pip freeze > requirements.txt     
 
-### Pipenv
+## Pipenv
 - 手順
   - 準備   
   pip install pipenv  
@@ -126,5 +132,34 @@ pip freeze > requirements.txt
   - pipenv uninstall requests  
 
 
-#### 参考
-https://qiita.com/QUANON/items/4a371651b07bb61fde41
+## pyenv  
+1. pyenvのインストール  
+git clone git://github.com/yyuu/pyenv.git ~/.pyenv  
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bash_profile  
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile  
+echo 'eval "$(pyenv init -)"' >> ~/.bash_profile  
+source ~/.bash_profile  
+
+2. pyenvでpythonをインストール    
+pyenv install 2.7.10  
+pyenv install 3.5.0  
+pyenv install --list    
+
+3. バージョン切り替え  
+pyenv local 2.7.10  
+pyenv local 3.5.0  
+python --version  
+
+4. sam用  
+git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv  
+source ~/.bash_profile  
+eval "$(pyenv virtualenv-init -)"  をbash_profileに追加  
+pyenv local 2.7.10   
+make setup   
+make init  
+make test  
+
+## 参考
+[概要](http://www.zopfco.de/entry/2017/04/03/233811)  
+[pipenv構築](https://qiita.com/QUANON/items/4a371651b07bb61fde41)   
+[pyenv構築](https://qiita.com/koooooo/items/b21d87ffe2b56d0c589b)
