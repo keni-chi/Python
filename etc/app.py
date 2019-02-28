@@ -424,6 +424,16 @@ def ujson_sample():
     y = ujson.loads(x)
     print(type(y))
 
+def dict_string():
+    import json
+    data = '{\"key\": \"value1\", \"key\": \"value2\"}'
+    print(data)
+    data_dict = json.loads(data)
+    print(data_dict)
+
+    print('----')
+    data = {"key": "value1", "key": "value2"}
+    print(data)
 
 def main():
     # ################################################
@@ -465,10 +475,10 @@ def main():
     # urllib_request_sample()
     # print('urllib_request--------------------end')
     #
-    # requests_sample
-    print('requests_sample--------------------start')
-    requests_sample()
-    print('requests_sample--------------------end')
+    # # requests_sample
+    # print('requests_sample--------------------start')
+    # requests_sample()
+    # print('requests_sample--------------------end')
 
     # ################################################
     # 正規表現
@@ -525,10 +535,15 @@ def main():
     kwargs_sample('a', k1=2, k2='a')
     print('kwargs_sample--------------------end')
 
-    # ujson_sample
-    print('ujson_sample--------------------start')
-    ujson_sample()
-    print('ujson_sample--------------------end')
+    # # ujson_sample
+    # print('ujson_sample--------------------start')
+    # ujson_sample()
+    # print('ujson_sample--------------------end')
+
+    # dict_string
+    print('dict_string--------------------start')
+    dict_string()
+    print('dict_string--------------------end')
 
     # ################################################
     # 変換
@@ -549,8 +564,6 @@ def main():
     print('calc_type--------------------start')
     calc_type()
     print('calc_type--------------------end')
-
-
 
 
 
