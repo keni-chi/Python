@@ -456,6 +456,7 @@ def ujson_sample():
     print(type(y))
     print('ujson_sample--------------------end')
 
+
 def dict_string():
     print('dict_string--------------------start')
     import json
@@ -468,6 +469,32 @@ def dict_string():
     data = {"key": "value1", "key": "value2"}
     print(data)
     print('dict_string--------------------end')
+
+
+def reflection_sample():
+    print('reflection_sample--------------------start')
+
+    print('globalsを使うパターン----')
+    import classes
+    cls = getattr(classes, 'Hoge')
+    instance = cls()
+    instance.get_name()  #=> 'hoge'
+    cls = getattr(classes, 'Fuga')
+    instance = cls()
+    instance.get_name()  #=> 'fuga'
+
+    print('reflection_sample--------------------end')
+
+
+def none_type():
+    print('none_type--------------------start')
+    x = None
+    print(x)
+    x = 1
+    print(x)
+
+    print('none_type--------------------end')
+
 
 def main():
     # ################################################
@@ -532,9 +559,15 @@ def main():
     dateteime_conv()
 
     # ################################################
-    # 小数
+    # 型
     # ################################################
     calc_type()
+    none_type()
+
+    # ################################################
+    # リフレクション
+    # ################################################
+    reflection_sample()
 
 
 if __name__ == '__main__':
