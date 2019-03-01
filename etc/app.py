@@ -2,6 +2,7 @@
 
 def os_path_append():
     """"method_os."""
+    print('os_path_append--------------------start')
     import os
     import sys
     sys.path.append(os.path.abspath('../etc'))
@@ -31,6 +32,7 @@ def os_path_append():
     inst = PathSample()
     x = inst._get_indata()
     print(x)
+    print('os_path_append--------------------end')
 
 
 def _urllib_request(url, body, headers, method):
@@ -112,6 +114,7 @@ def urllib_request_sample():
 
 def read_json():
     """read_json. """
+    print('read_json--------------------start')
     import os
     import json
 
@@ -122,6 +125,7 @@ def read_json():
     print(file_data001)
     f.close()
 
+    print('read_json--------------------end')
     return file_data001
 
 
@@ -153,6 +157,7 @@ def check_uuid(data):
 
 def in_xxxx():
     """in_xxxx."""
+    print('in_xxxx--------------------start')
     x = ['abc', 'def']
     y = 'abc'
     z = [1, 'abc']
@@ -165,6 +170,7 @@ def in_xxxx():
 
     for i in z:
         print(type(i))
+    print('in_xxxx--------------------end')
 
 
 def _check_data(s):
@@ -177,9 +183,11 @@ def _check_data(s):
 
 def list_inner():
     """list_inner."""
+    print('list_inner--------------------start')
     data = {"k": "v1,v2,v3"}
     data_params = [s for s in data['k'].split(',') if not _check_data(s)]
     print(data_params)
+    print('list_inner--------------------end')
 
 
 def _xpath_get(data, path):
@@ -196,6 +204,7 @@ def _xpath_get(data, path):
 
 def xpath_get_sample():
     """xpath_get_sample."""
+    print('xpath_get_sample--------------------start')
     sample_data = {
         "k1": {
             "k2-1": "v2-1",
@@ -210,6 +219,7 @@ def xpath_get_sample():
     path = "/k1"
     data = _xpath_get(sample_data, path)
     print(data)
+    print('xpath_get_sample--------------------end')
 
 
 def _dict_merge(dct, merge_dct):
@@ -224,6 +234,7 @@ def _dict_merge(dct, merge_dct):
 
 
 def excel_sample():
+    print('excel_sample--------------------start')
     import pandas as pd
     import json
     df = pd.read_excel('file/read_data.xlsx', 'Sheet1', parse_cols=[0, 2, 5])
@@ -271,9 +282,11 @@ def excel_sample():
     file = open("file/output.json", "w")
     file.write(res_str)
     file.close()
+    print('excel_sample--------------------end')
 
 
 def list_copy():
+    print('list_copy--------------------start')
     x_list = [0, 1]
     y_list = x_list[:]
     z_list = ['a', 'b']
@@ -297,9 +310,11 @@ def list_copy():
     y[0][0] = 123
     print(x)
     print(y)
+    print('list_copy--------------------end')
 
 
 def dict_into():
+    print('dict_into--------------------start')
     sample_data = {
         "k1": {
             "k2-1": "v2-1",
@@ -310,21 +325,27 @@ def dict_into():
 
     sample_data['k_new1'] = 'v_new1'
     print(sample_data)
+    print('dict_into--------------------end')
 
 
 def arg_sample(x, *arg):
+    print('arg_sample--------------------start')
     print('x: ' + x)
     print(arg)
     print(arg[0])
+    print('arg_sample--------------------end')
 
 
 def kwargs_sample(x, **kwargs):
+    print('kwargs_sample--------------------start')
     print('x: ' + x)
     print(kwargs)
     print(kwargs['k1'])
+    print('kwargs_sample--------------------end')
 
 
 def yaml_sample():
+    print('yaml_sample--------------------start')
     import yaml
     f = open("./file/input.yml", "r+")
     data = yaml.load(f)
@@ -334,9 +355,11 @@ def yaml_sample():
     f = open("file/output.yml", "w")
     f.write(yaml.dump(data, default_flow_style=False))
     f.close
+    print('yaml_sample--------------------end')
 
 
 def csv_sample():
+    print('csv_sample--------------------start')
     import csv
     f = open('file/input.csv', 'r')
     reader = csv.reader(f)
@@ -362,9 +385,11 @@ def csv_sample():
     df = pd.read_csv('file/input.csv')
     print (df)
     print (df['C'])
+    print('csv_sample--------------------end')
 
 
 def encode_decode():
+    print('encode_decode--------------------start')
     import base64
     import gzip
     data = 'abcde'
@@ -380,9 +405,11 @@ def encode_decode():
     print(decompress_b)
     raw_data = decompress_b.decode()
     print(raw_data)
+    print('encode_decode--------------------end')
 
 
 def calc_type():
+    print('calc_type--------------------start')
     x = 0.1 + 0.1 + 0.1
     print(x)
     print(type(x))
@@ -396,9 +423,11 @@ def calc_type():
 
     # 四捨五入
     print(Decimal("123.456789").quantize(Decimal("0.01"),rounding=ROUND_HALF_UP))
+    print('calc_type--------------------end')
 
 
 def dateteime_conv():
+    print('dateteime_conv--------------------start')
     from datetime import datetime, timezone
     t_str = '2019-01-01T13:15:55.123Z'
     t_d = datetime.strptime(t_str, '%Y-%m-%dT%H:%M:%S.%fZ')
@@ -414,17 +443,21 @@ def dateteime_conv():
     print(now)
     now_conv = datetime.strftime(now, '%FT%T.%f')[:-3] + 'Z'
     print(now_conv)
+    print('dateteime_conv--------------------end')
 
 
 def ujson_sample():
+    print('ujson_sample--------------------start')
     import ujson
     data = {"key": "value"}
     x = ujson.dumps(data)
     print(x)
     y = ujson.loads(x)
     print(type(y))
+    print('ujson_sample--------------------end')
 
 def dict_string():
+    print('dict_string--------------------start')
     import json
     data = '{\"key\": \"value1\", \"key\": \"value2\"}'
     print(data)
@@ -434,38 +467,21 @@ def dict_string():
     print('----')
     data = {"key": "value1", "key": "value2"}
     print(data)
+    print('dict_string--------------------end')
 
 def main():
     # ################################################
     # ファイル操作
     # ################################################
-    # read_json
-    print('read_json--------------------start')
     read_json()
-    print('read_json--------------------end')
-
-    # yaml_sample
-    print('yaml_sample--------------------start')
     yaml_sample()
-    print('yaml_sample--------------------end')
-
-    # csv_sample
-    print('csv_sample--------------------start')
     csv_sample()
-    print('csv_sample--------------------end')
-
-    # excel_sample
-    print('excel_sample--------------------start')
     excel_sample()
-    print('excel_sample--------------------end')
 
     # ################################################
     # クラス、外部関数
     # ################################################
-    # os_path_append
-    print('os_path_append--------------------start')
     os_path_append()
-    print('os_path_append--------------------end')
 
     # ################################################
     # 通信
@@ -483,7 +499,6 @@ def main():
     # ################################################
     # 正規表現
     # ################################################
-    # check_datetime
     print('check_datetime--------------------start')
     print(check_datetime('2019-02-04T07:06:06.379Z', 'millisecond'))
     print(check_datetime('20190204T07:06:06.379Z', 'millisecond'))
@@ -498,73 +513,28 @@ def main():
     # ################################################
     # dict, list, str操作
     # ################################################
-    # in_xxxx
-    print('in_xxxx--------------------start')
     in_xxxx()
-    print('in_xxxx--------------------end')
-
-    # list_inner
-    print('list_inner--------------------start')
     list_inner()
-    print('list_inner--------------------end')
-
-    # xpath_get_sample
-    print('xpath_get_sample--------------------start')
     xpath_get_sample()
-    print('xpath_get_sample--------------------end')
-
-    # list_copy
-    print('list_copy--------------------start')
     list_copy()
-    print('list_copy--------------------end')
-
-    # dict_into
-    print('dict_into--------------------start')
     dict_into()
-    print('dict_into--------------------end')
-
-    # args_sample
-    print('arg_sample--------------------start')
     arg_sample('a', 1)
     arg_sample('a', 2, 'a')
-    print('arg_sample--------------------end')
-
-    # kwargs_sample
-    print('kwargs_sample--------------------start')
     kwargs_sample('a', k1=1)
     kwargs_sample('a', k1=2, k2='a')
-    print('kwargs_sample--------------------end')
-
-    # # ujson_sample
-    # print('ujson_sample--------------------start')
     # ujson_sample()
-    # print('ujson_sample--------------------end')
-
-    # dict_string
-    print('dict_string--------------------start')
     dict_string()
-    print('dict_string--------------------end')
 
     # ################################################
     # 変換
     # ################################################
-    # encode_decode
-    print('encode_decode--------------------start')
     encode_decode()
-    print('encode_decode--------------------end')
-
-    print('dateteime_conv--------------------start')
     dateteime_conv()
-    print('dateteime_conv--------------------end')
 
     # ################################################
     # 小数
     # ################################################
-    # calc_type
-    print('calc_type--------------------start')
     calc_type()
-    print('calc_type--------------------end')
-
 
 
 if __name__ == '__main__':
