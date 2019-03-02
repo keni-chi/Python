@@ -169,7 +169,7 @@ def in_xxxx():
         print('リスト項目あり')
 
     if 'a' in y:
-        print('aを含む文字列です')
+        print('aを含む文字列です.')
 
     for i in z:
         print(type(i))
