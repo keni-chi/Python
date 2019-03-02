@@ -98,8 +98,10 @@ def requests_sample():
     print(r.content)
 
 
+
 def urllib_request_sample():
     """urllib_request_sample. """
+    print('urllib_request_sample--------------------start')
     url = "http://weather.livedoor.com/forecast/webservice/json/v1?city=400040"
     body = None
     headers = {
@@ -110,6 +112,7 @@ def urllib_request_sample():
     }
     res_json = _urllib_request(url, body, headers, 'GET')
     print(res_json['code'])
+    print('urllib_request_sample--------------------end')
 
 
 def read_json():
@@ -513,11 +516,8 @@ def main():
     # ################################################
     # 通信
     # ################################################
-    # # urllib_request
-    # print('urllib_request--------------------start')
     # urllib_request_sample()
-    # print('urllib_request--------------------end')
-    #
+
     # # requests_sample
     # print('requests_sample--------------------start')
     # requests_sample()
