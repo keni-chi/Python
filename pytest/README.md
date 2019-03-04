@@ -61,7 +61,11 @@ markしたテストだけ実行
 ```
 
 
-#### 意味
+#### 意味  
+- s  
+  print文を出力  
+- v  
+  差分詳細表示  
 - --duration=0   
   テストコードの定義関数ごとの時間を表示  
 - Stmts   
@@ -91,3 +95,6 @@ flake8-docstirngsの場合、以下例のようにtox.iniを作成する。
 max-line-length=400
 ignore=D104
 ```
+
+## 参考
+[monkeypatch](http://thinkami.hatenablog.com/entry/2017/03/07/065903)
