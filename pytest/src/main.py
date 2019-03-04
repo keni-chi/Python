@@ -8,3 +8,10 @@ class Calc:
 
     def dif(self):
         return self.a - self.b
+
+
+class Target(object):
+    CONST_VALUE = 'foo'
+
+    def get_const(self):
+        return self.CONST_VALUE
