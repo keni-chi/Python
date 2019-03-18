@@ -500,7 +500,7 @@ def none_type():
 
 
 def map_sample():
-    print('map_filter_reduce--------------------start')
+    print('map_sample--------------------start')
     items = [1, 2, 3]
 
     def plus(n): # 10加算して返すだけの関数plus
@@ -518,7 +518,7 @@ def map_sample():
     z = [x+20 for x in items] #同じ事をリスト内包表記で（最適な方法）
     print(z)
 
-    print('map_filter_reduce--------------------end')
+    print('map_sample--------------------end')
 
 
 def filter_sample():
