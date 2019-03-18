@@ -535,6 +535,11 @@ def filter_sample():
         
     print('filter_sample--------------------end')
 
+def reduce_sample():
+    print('reduce_sample--------------------start')
+    
+
+    print('reduce_sample--------------------end')
 
 
 def main():
@@ -612,6 +617,7 @@ def main():
     # ################################################
     map_sample()
     filter_sample()
+    reduce_sample()
 
 
 
