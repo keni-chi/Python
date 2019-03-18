@@ -498,6 +498,7 @@ def none_type():
 
     print('none_type--------------------end')
 
+
 def map_sample():
     print('map_filter_reduce--------------------start')
     items = [1, 2, 3]
