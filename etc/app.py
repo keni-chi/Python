@@ -537,7 +537,13 @@ def filter_sample():
 
 def reduce_sample():
     print('reduce_sample--------------------start')
+    import functools
+    def add_func(a, b):
+        return a+b
     
+    items = [1, 2, 3]
+    x = functools.reduce(add_func, items) # add_func(add_func(1, 2), 3)
+    print(x)
 
     print('reduce_sample--------------------end')
 
