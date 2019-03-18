@@ -519,6 +519,21 @@ def map_sample():
 
     print('map_filter_reduce--------------------end')
 
+
+def filter_sample():
+    print('filter_sample--------------------end')
+    x = filter(lambda n:n%2==1, items) #lambda関数がTrueを返す要素（奇数）要素のみ抽出する
+    print(x)
+    for i in x:
+        print(i)
+        
+    y = [x for x in items if x%2==1]
+    print(y)
+        
+    print('filter_sample--------------------end')
+
+
+
 def main():
     # ################################################
     # ファイル操作
@@ -593,6 +608,7 @@ def main():
     # map,filter,reduce
     # ################################################
     map_sample()
+    filter_sample()
 
 
 
