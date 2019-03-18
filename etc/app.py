@@ -498,6 +498,27 @@ def none_type():
 
     print('none_type--------------------end')
 
+def map_sample():
+    print('map_filter_reduce--------------------start')
+    items = [1, 2, 3]
+
+    def plus(n): # 10加算して返すだけの関数plus
+        return n+10
+    x = map(plus, items) #itemsの要素すべてにplus関数の実行し、新しいlistを返す
+    print(x)
+    for i in x:
+        print(i)
+    
+    y = map(lambda n:n+20, items) #関数部分をlambda関数で指定
+    print(y)
+    for i in y:
+        print(i)
+
+    z = [x+20 for x in items] #同じ事をリスト内包表記で（最適な方法）
+    print(z)
+
+    print('map_filter_reduce--------------------end')
+
 def main():
     # ################################################
     # ファイル操作
@@ -567,6 +588,12 @@ def main():
     # リフレクション
     # ################################################
     reflection_sample()
+
+    # ################################################
+    # map,filter,reduce
+    # ################################################
+    map_sample()
+
 
 
 if __name__ == '__main__':
