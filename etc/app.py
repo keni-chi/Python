@@ -521,7 +521,9 @@ def map_sample():
 
 
 def filter_sample():
-    print('filter_sample--------------------end')
+    print('filter_sample--------------------start')
+    items = [1, 2, 3]
+
     x = filter(lambda n:n%2==1, items) #lambda関数がTrueを返す要素（奇数）要素のみ抽出する
     print(x)
     for i in x:
