@@ -6,7 +6,7 @@
 ### インストール
 pip install flake8
 
-### 実行
+### 実行方法
 flake8 {ファイル名.py}
 
 ## 参考
