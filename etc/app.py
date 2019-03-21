@@ -575,12 +575,13 @@ def try_except():
     # raise NameError('test')
 
     x = 5
-    y = 1
+    y = 0
     try:
         result = x / y
     except ZeroDivisionError:
         print("division by zero!")
     else:
+        # else 節は try 節で全く例外が送出されなかったときに実行されるコード
         print("result is", result)
     finally:
         print("executing finally clause")
