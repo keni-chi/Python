@@ -548,6 +548,22 @@ def reduce_sample():
     print('reduce_sample--------------------end')
 
 
+def long_row():
+    print('long_row--------------------start')
+    
+    n = 1 + 2 \
+        + 3
+    print(n)
+
+    b = 'bbbb'
+    s = 'aaaaaaa'\
+        + b\
+        + 'cccc'
+    print(s)
+
+    print('long_row--------------------end')
+
+
 def main():
     # ################################################
     # ファイル操作
@@ -624,6 +640,11 @@ def main():
     map_sample()
     filter_sample()
     reduce_sample()
+    
+    # ################################################
+    # etc
+    # ################################################
+    long_row()
 
 
 
