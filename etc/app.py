@@ -572,8 +572,18 @@ def try_except():
     except ValueError:
         print("Oops!  That was no valid number.  Try again...")
 
-    raise NameError('test')
+    # raise NameError('test')
 
+    x = 5
+    y = 1
+    try:
+        result = x / y
+    except ZeroDivisionError:
+        print("division by zero!")
+    else:
+        print("result is", result)
+    finally:
+        print("executing finally clause")
     
     print('try_except--------------------end')    
 
