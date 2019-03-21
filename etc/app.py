@@ -566,7 +566,13 @@ def long_row():
 
 def try_except():
     print('try_except--------------------start')
-    
+    try:
+        # x = int(input("Please enter a number: "))
+        pass
+    except ValueError:
+        print("Oops!  That was no valid number.  Try again...")
+
+
     
     print('try_except--------------------end')    
 
