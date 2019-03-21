@@ -564,6 +564,13 @@ def long_row():
     print('long_row--------------------end')
 
 
+def try_except():
+    print('try_except--------------------start')
+    
+    
+    print('try_except--------------------end')    
+
+
 def main():
     # ################################################
     # ファイル操作
@@ -645,7 +652,7 @@ def main():
     # etc
     # ################################################
     long_row()
-
+    try_except()
 
 
 if __name__ == '__main__':
