@@ -572,6 +572,7 @@ def try_except():
     except ValueError:
         print("Oops!  That was no valid number.  Try again...")
 
+    raise NameError('test')
 
     
     print('try_except--------------------end')    
