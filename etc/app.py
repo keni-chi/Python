@@ -590,7 +590,12 @@ def try_except():
 
 
 def list_set():
-    print('list_set--------------------start')    
+    print('list_set--------------------start')
+
+    l = [3, 3, 2, 1, 5, 1, 4, 2, 3]
+    l_unique = list(set(l))
+    print(l_unique) 
+
     print('list_set--------------------end')    
 
 
