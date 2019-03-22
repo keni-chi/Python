@@ -589,6 +589,11 @@ def try_except():
     print('try_except--------------------end')    
 
 
+def list_set():
+    print('list_set--------------------start')    
+    print('list_set--------------------end')    
+
+
 def main():
     # ################################################
     # ファイル操作
@@ -641,6 +646,7 @@ def main():
     kwargs_sample('a', k1=2, k2='a')
     # ujson_sample()
     dict_string()
+    list_set()
 
     # ################################################
     # 変換
