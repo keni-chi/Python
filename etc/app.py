@@ -596,6 +596,9 @@ def list_set():
     l_unique = list(set(l))
     print(l_unique) 
 
+    l_unique_order = list(dict.fromkeys(l))
+    print(l_unique_order)
+
     print('list_set--------------------end')    
 
 
