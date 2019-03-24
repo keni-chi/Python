@@ -98,7 +98,6 @@ def requests_sample():
     print(r.content)
 
 
-
 def urllib_request_sample():
     """urllib_request_sample. """
     print('urllib_request_sample--------------------start')
