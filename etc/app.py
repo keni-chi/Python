@@ -71,6 +71,8 @@ def _urllib_request(url, body, headers, method):
 
 
 def requests_sample():
+    print('requests_sample--------------------start')
+
     import requests
     headers = {
         'Content-Type': 'application/json',
@@ -96,6 +98,8 @@ def requests_sample():
     print('delete---------')
     r = requests.delete('https://httpbin.org/delete')
     print(r.content)
+
+    print('requests_sample--------------------end')
 
 
 def urllib_request_sample():
@@ -602,50 +606,29 @@ def list_set():
 
 
 def main():
-    # ################################################
-    # ファイル操作
-    # ################################################
     print('ファイル操作================================')
     read_json()
     yaml_sample()
     csv_sample()
     excel_sample()
 
-    # ################################################
-    # クラス、外部関数
-    # ################################################
     print('クラス、外部関数================================')
     os_path_append()
 
-    # ################################################
-    # 通信
-    # ################################################
     print('通信================================')
     # urllib_request_sample()
-
-    # # requests_sample
-    # print('requests_sample--------------------start')
     # requests_sample()
-    # print('requests_sample--------------------end')
 
-    # ################################################
-    # 正規表現
-    # ################################################
     print('正規表現================================')
     print('check_datetime--------------------start')
     print(check_datetime('2019-02-04T07:06:06.379Z', 'millisecond'))
     print(check_datetime('20190204T07:06:06.379Z', 'millisecond'))
     print('check_datetime--------------------end')
-
-    # check_uuid
     print('check_uuid--------------------start')
     print(check_uuid('12345678-1234-1234-1234-abcde1234567'))
     print(check_uuid('12345678-1234-1234-1234-abcde123456G'))
     print('check_uuid--------------------end')
 
-    # ################################################
-    # dict, list, str操作
-    # ################################################
     print('dict, list, str操作================================')
     in_xxxx()
     list_inner()
@@ -660,9 +643,6 @@ def main():
     dict_string()
     list_set()
 
-    # ################################################
-    # 変換
-    # ################################################
     print('変換================================')
     encode_decode()
     dateteime_conv()
