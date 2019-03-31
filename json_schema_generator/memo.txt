@@ -1,4 +1,4 @@
-Ql
+å‚è€ƒ
 - Generator
 https://github.com/perenecabuto/json_schema_generator
 python setup.py install
