@@ -607,6 +607,7 @@ def list_set():
 
     print('list_set--------------------end')    
 
+
 def for_sample():
     print('for_sample--------------------start')
     
@@ -618,6 +619,26 @@ def for_sample():
     print(y_list)
     
     print('for_sample--------------------end')    
+
+
+def if_sample():
+    print('if_sample--------------------start')
+    
+    x1 = ''
+    x2 = []
+    x3 = None
+    if not False:
+        print('実行！')
+    if not True:
+        print('不実行！')
+    if not x1:
+        print('実行！x1')
+    if not x2:
+        print('実行！x2')
+    if not x3:
+        print('実行！x3')
+    
+    print('if_sample--------------------start')
 
 
 def main():
@@ -678,6 +699,7 @@ def main():
     long_row()
     try_except()
     for_sample()
+    if_sample()
 
 
 if __name__ == '__main__':
