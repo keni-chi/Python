@@ -32,6 +32,9 @@ def os_path_append():
     inst = PathSample()
     x = inst._get_indata()
     print(x)
+    print(vars(inst))
+    print(dir(inst))
+    
     print('os_path_append--------------------end')
 
 
@@ -604,6 +607,13 @@ def list_set():
 
     print('list_set--------------------end')    
 
+def for_sample():
+    print('for_sample--------------------start')
+    
+
+    
+    print('for_sample--------------------end')    
+
 
 def main():
     print('ファイル操作================================')
@@ -662,6 +672,7 @@ def main():
     print('etc================================')
     long_row()
     try_except()
+    for_sample()
 
 
 if __name__ == '__main__':
