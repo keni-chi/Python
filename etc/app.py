@@ -610,7 +610,12 @@ def list_set():
 def for_sample():
     print('for_sample--------------------start')
     
-
+    x_list = []
+    for i in x_list:
+        print(i)
+    y_list = [i for i in x_list]
+    print('001---')
+    print(y_list)
     
     print('for_sample--------------------end')    
 
