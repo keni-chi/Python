@@ -641,6 +641,11 @@ def if_sample():
     print('if_sample--------------------start')
 
 
+def spllit_sample():
+    print('spllit_sample--------------------start')
+    print('spllit_sample--------------------end')
+
+
 def main():
     print('ファイル操作================================')
     read_json()
@@ -700,7 +705,7 @@ def main():
     try_except()
     for_sample()
     if_sample()
-    spllit()
+    spllit_sample()
 
 
 if __name__ == '__main__':
