@@ -700,6 +700,7 @@ def main():
     try_except()
     for_sample()
     if_sample()
+    spllit()
 
 
 if __name__ == '__main__':
