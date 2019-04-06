@@ -643,6 +643,13 @@ def if_sample():
 
 def spllit_sample():
     print('spllit_sample--------------------start')
+
+    x_str = 'a,b,c,d'
+    y = x_str.split(',')
+    print(type(y))
+    print(y)
+    print(y[1])
+
     print('spllit_sample--------------------end')
 
 
