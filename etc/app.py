@@ -638,7 +638,7 @@ def if_sample():
     if not x3:
         print('実行！x3')
     
-    print('if_sample--------------------start')
+    print('if_sample--------------------end')
 
 
 def spllit_sample():
