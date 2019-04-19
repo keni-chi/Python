@@ -179,6 +179,13 @@ def in_xxxx():
 
     for i in z:
         print(type(i))
+
+    a = {"k": "v"}
+    if 'a' in a:
+        print('a')
+    if 'k' in a:
+        print('k')    
+
     print('in_xxxx--------------------end')
 
 
@@ -653,6 +660,51 @@ def spllit_sample():
     print('spllit_sample--------------------end')
 
 
+def list_dict_sort():
+    print('list_dict_sort--------------------start')
+        
+    # nestなし
+    scores = [
+    {'kokugo': 33, 'sansuu': 85},
+    {'kokugo': 77, 'sansuu': 23},
+    {'kokugo': 55, 'sansuu': 100}
+    ]
+    scores_sorted = sorted(scores, key=lambda x:x['kokugo'])
+    print(scores_sorted)
+    
+    # nestあり
+    scores = [
+        {"k": {'kokugo': 33, 'sansuu': 85}},
+        {"k": {'kokugo': 77, 'sansuu': 23}},
+        {"k": {'kokugo': 55, 'sansuu': 100}}
+    ]
+    scores_sorted = sorted(scores, key=lambda x:x['k']['kokugo'])
+    print(scores_sorted)
+
+    # nestあり。その中にlistあり。
+    scores = [
+        {"ev": [{'kokugo': 33, 'sansuu': 85}, {'kokugo': 333, 'sansuu': 850}]},
+        {"ev": [{'kokugo': 444, 'sansuu': 231}, {'kokugo': 77, 'sansuu': 23}]},
+        {"ev": [{'kokugo': 55, 'sansuu': 10}, {'kokugo': 111, 'sansuu': 100}]}
+    ]
+    # 内側の並べ替え
+    score_list = []
+    for i in scores:
+        in_list = sorted(i['ev'], key=lambda x:x['kokugo'])
+        score_list.append({"ev": in_list})
+        print('A001')
+        print(score_list)    
+    print('A002')
+    print(score_list)
+    # 内側の並べ替え
+    result = sorted(score_list, key=lambda x:x['ev'][0]['sansuu'])
+    print('A003')
+    print(result)
+    
+
+    print('list_dict_sort--------------------end')
+
+
 def main():
     print('ファイル操作================================')
     read_json()
@@ -713,6 +765,7 @@ def main():
     for_sample()
     if_sample()
     spllit_sample()
+    list_dict_sort()
 
 
 if __name__ == '__main__':
