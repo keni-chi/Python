@@ -579,6 +579,7 @@ def long_row():
 
 def try_except():
     print('try_except--------------------start')
+
     try:
         # x = int(input("Please enter a number: "))
         pass
