@@ -700,7 +700,6 @@ def list_dict_sort():
     result = sorted(score_list, key=lambda x:x['ev'][0]['sansuu'])
     print('A003')
     print(result)
-    
 
     print('list_dict_sort--------------------end')
 
