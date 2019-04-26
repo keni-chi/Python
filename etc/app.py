@@ -514,6 +514,7 @@ def none_type():
 
 def map_sample():
     print('map_sample--------------------start')
+
     items = [1, 2, 3]
 
     def plus(n): # 10加算して返すだけの関数plus
