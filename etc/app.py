@@ -464,17 +464,20 @@ def dateteime_conv():
 
 def ujson_sample():
     print('ujson_sample--------------------start')
+
     import ujson
     data = {"key": "value"}
     x = ujson.dumps(data)
     print(x)
     y = ujson.loads(x)
     print(type(y))
+
     print('ujson_sample--------------------end')
 
 
 def dict_string():
     print('dict_string--------------------start')
+
     import json
     data = '{\"key\": \"value1\", \"key\": \"value2\"}'
     print(data)
@@ -484,6 +487,7 @@ def dict_string():
     print('----')
     data = {"key": "value1", "key": "value2"}
     print(data)
+
     print('dict_string--------------------end')
 
 
