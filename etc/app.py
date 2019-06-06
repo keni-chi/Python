@@ -633,6 +633,10 @@ def for_sample():
     print('001---')
     print(y_list)
     
+    l = {"k": "v"}
+    y = l['k'] + 'A' if l['k']=='v' else 0
+    print(y)
+    
     print('for_sample--------------------end')    
 
 
