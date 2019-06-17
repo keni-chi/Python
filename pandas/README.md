@@ -8,4 +8,5 @@
 [pandas.DataFrameに列や行を追加](https://note.nkmk.me/python-pandas-assign-append/)  
 [pandas.DataFrame, Seriesを時系列データとして処理](https://note.nkmk.me/python-pandas-time-series-datetimeindex/)  
 [pandasで特定の文字列を含む行を抽出（完全一致、部分一致）](https://note.nkmk.me/python-pandas-str-contains-match/)
-[Select Date And Time Ranges](https://chrisalbon.com/machine_learning/preprocessing_dates_and_times/select_date_and_time_ranges/)
+[Select Date And Time Ranges](https://chrisalbon.com/machine_learning/preprocessing_dates_and_times/select_date_and_time_ranges/)  
+[pandasのDataFrameから期間を範囲指定して抽出する](https://qiita.com/terafon/items/6ec1ab28dcb261db2c73)
