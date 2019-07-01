@@ -3,6 +3,12 @@
 ## 概要
 覚書である。順次記載予定。
 
+### 詳細
+
+- dataframeで改行コードを制御してCSV出力する時  
+```
+df.to_csv('test.csv', line_terminator='\r\n')
+```
 
 ## 参考
 [pandas.DataFrameに列や行を追加](https://note.nkmk.me/python-pandas-assign-append/)  
