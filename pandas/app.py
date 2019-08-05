@@ -1,4 +1,5 @@
 import pandas as pd
+from decimal import Decimal
 
 def pd_main():
     print('pd--------------------start')
@@ -18,13 +19,17 @@ def pd_main():
     print(len(df) - df.count())
 
     print('df1---')
+    print('フィルタを行う')
     df1_1 =df[df['k'] == 'a']
     df1_2=df[df['k'] == 'b']
+    df1_3=df[(df['k'] == 'a') | (df['k'] == 'b')]
     print(df1_1)
     print(df1_2)
+    print(df1_3)
     
-    df2 = pd.merge(df1_1, df1_2, on='t', how='outer', suffixes=('_1', '_2'))
     print('df2---')
+    print('マージ。dropna。')
+    df2 = pd.merge(df1_1, df1_2, on='t', how='outer', suffixes=('_1', '_2'))
     print(df2)
     print(df2.dropna(how='any'))
     print(df2.dropna(thresh=3))     # 欠損値ではない要素の数がx個以上含まれている行が残る
@@ -32,6 +37,7 @@ def pd_main():
     print(df2.dropna(subset=['v_1']))
 
     print('df3---')
+    print('int変換。')
     df3_1 = df.dropna(how='any')
     df3_2 = df3_1['v'].astype(int)
     print('df3_A')
@@ -41,8 +47,26 @@ def pd_main():
     print(df3_1)
 
     print('df4---')
+    print('null埋め。')
     df4 = df.fillna(df.median())
     print(df4)
+
+    print('df5---')
+    print('union。')
+    df5 = pd.concat([df1_1, df1_1], ignore_index=True)
+    print(df5)
+
+    print('df6---')
+    print('decimal')
+
+    print('df7---')
+    print('append')
+
+    print('df8---')
+    print('df新規')
+    col = ['t', 'k', 'v', 'ex1']
+    df8 = pd.DataFrame(columns=col)
+    print(df8)
 
     print('pd--------------------end')
 
