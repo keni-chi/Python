@@ -1,5 +1,7 @@
 import pandas as pd
 from decimal import Decimal
+import decimal
+
 
 def pd_main():
     print('pd--------------------start')
@@ -35,6 +37,16 @@ def pd_main():
     print(df2.dropna(thresh=3))     # 欠損値ではない要素の数がx個以上含まれている行が残る
     print(df2.dropna(thresh=4))
     print(df2.dropna(subset=['v_1']))
+    
+    # 複数マージ
+    df2_1 = df
+    df2_2 = df
+    df2_3 = df
+    df2_4 = df
+    df2_a = pd.merge(df2_1, df2_2, on='t', how='outer', suffixes=('_1', '_2'))
+    df2_b = pd.merge(df2_a, df2_3, on='t', how='outer', suffixes=('_2', '_3'))
+    df2_c = pd.merge(df2_b, df2_4, on='t', how='outer', suffixes=('_3', '_4'))
+    print(df2_c)
 
     print('df3---')
     print('int変換。')
@@ -58,15 +70,33 @@ def pd_main():
 
     print('df6---')
     print('decimal')
+    df6_1 = df.dropna(how='any')
+    df6_2 = df6_1['ex1'].apply(lambda x: decimal.Decimal(x))
+    v_raw = df6_2.mean()
+    v = decimal.Decimal(str(v_raw)).quantize(Decimal('0.1'), rounding=decimal.ROUND_HALF_UP)
+    print(v)
 
     print('df7---')
     print('append')
+    df7 = df
+    data = ["2016-04-13T04:00:00", "append", "1", 1]
+    tmp_se = pd.Series(data, index=df7.columns)
+    df7 = df7.append(tmp_se, ignore_index=True)
+    print(df7)
 
     print('df8---')
     print('df新規')
     col = ['t', 'k', 'v', 'ex1']
     df8 = pd.DataFrame(columns=col)
     print(df8)
+
+
+
+
+
+
+
+
 
     print('pd--------------------end')
 
