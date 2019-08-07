@@ -90,9 +90,16 @@ def pd_main():
     df8 = pd.DataFrame(columns=col)
     print(df8)
 
-
-
-
+    print('df9---')
+    print('演算')
+    df9_1 = df
+    df9_2 = df9_1.dropna(how='any')
+    print(df9_2)
+    print(df9_2['ex1'].sum())
+    print(df9_2['ex1'].max())
+    print(df9_2['ex1'].min())
+    print(df9_2['ex1'].mean())
+    print(len(df9_2))
 
 
 
