@@ -61,6 +61,7 @@ def pd_main():
     print('df4---')
     print('null埋め。')
     df4 = df.fillna(df.median())
+    # df4 = df.fillna(0)
     print(df4)
 
     print('df5---')
@@ -75,6 +76,9 @@ def pd_main():
     v_raw = df6_2.mean()
     v = decimal.Decimal(str(v_raw)).quantize(Decimal('0.1'), rounding=decimal.ROUND_HALF_UP)
     print(v)
+    print('テーブル構造変えない')
+    df6_1['v'] = df6_1['v'].apply(lambda x: decimal.Decimal(x))
+    print(df6_1)
 
     print('df7---')
     print('append')
@@ -100,9 +104,6 @@ def pd_main():
     print(df9_2['ex1'].min())
     print(df9_2['ex1'].mean())
     print(len(df9_2))
-
-
-
 
 
     print('pd--------------------end')
