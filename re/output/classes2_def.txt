@@ -1,0 +1,4 @@
+__init__
+get_name2
+__init__
+get_name2
