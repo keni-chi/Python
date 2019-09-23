@@ -32,9 +32,9 @@ def scatter1(x, y):
     print(x[0:2])
     print(x[2:4])
     plt.scatter(x[0:2], y[0:2],
-                color='red', marker='o', label='setosa')
+                color='red', marker='o', label='a')
     plt.scatter(x[2:4], y[2:4],
-                color='blue', marker='x', label='versicolor')
+                color='blue', marker='x', label='b')
     plt.xlabel('xlabel')
     plt.ylabel('ylabel')
     plt.legend(loc='upper left')
