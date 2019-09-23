@@ -16,7 +16,12 @@ def get_file_path_list():
 
 def camel_to_word(camel):
     word_list = [x for x in re.split('([a-z]+)([A-Z][a-z0-9]+)|([A-Z][a-z0-9]+)', camel) if x != None and x != '']
-    # print(word_list)
+    return word_list
+
+
+def snake_to_word(snake):
+    word_list = snake.split('_')
+    print(word_list)
     return word_list
 
 
@@ -32,8 +37,14 @@ def make_word_list(target):
             if matching_str in line:
                 line = line.replace(matching_str, '')
                 line =  line.split('(')[0]
-                camel = line.replace(' ', '')
-                method_list.extend(camel_to_word(camel))
+                line = line.replace(' ', '')
+                line = line.replace('__', '')
+                if target == 'class':
+                    method_list.extend(camel_to_word(line))
+                elif target == 'def':
+                    method_list.extend(snake_to_word(line))
+                else:
+                    pass
 
         words = '\n'.join(method_list)
 

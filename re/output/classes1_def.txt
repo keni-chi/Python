@@ -1,4 +1,6 @@
-__init__
-get_name1
-__init__
-get_name1
+init
+get
+name1
+init
+get
+name1
