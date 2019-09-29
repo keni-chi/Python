@@ -1,6 +1,7 @@
 import pandas as pd
 from decimal import Decimal
 import decimal
+import datetime as dt
 
 
 def pd_main():
@@ -90,7 +91,7 @@ def pd_main():
 
     print('df8---')
     print('df新規')
-    col = ['t', 'k', 'v', 'ex1']
+    col = ['k', 't', 'v', 'ex1']
     df8 = pd.DataFrame(columns=col)
     print(df8)
 
@@ -104,6 +105,34 @@ def pd_main():
     print(df9_2['ex1'].min())
     print(df9_2['ex1'].mean())
     print(len(df9_2))
+
+    print('df10---')
+    print('pivot---')
+    df10_1 = df.drop('ex1', axis=1)
+    df10_2 = pd.pivot_table(df10_1,index="k", columns="t", aggfunc='mean')
+    # df10_２ = pd.pivot_table(df, values="k",index="Survived", columns="Embarked", aggfunc='mean')
+    print(df10_2)
+    df10_2.to_csv('output_df10_2.csv')
+
+    print('df11---')
+    print('datetime変換')
+    # df['日付'] = pd.to_datetime(df['t'])
+    df['t'] = pd.to_datetime(df['t'])
+    print(df.dtypes)
+    print(df.head())
+
+    print('df12---')
+    print('期間抽出')
+    # df_12_1 = df[(df['日付'] >= dt.datetime(2016,4,10)) & (df['日付'] < dt.datetime(2016,4,12))]
+    df_12_1 = df[(df['t'] >= dt.datetime(2016,4,10)) & (df['t'] < dt.datetime(2016,4,12))]
+    print(df_12_1.head())
+    print('--')
+    # df_12_2 = df[(df['日付'] >= dt.datetime(2016,4,12)) & (df['日付'] < dt.datetime(2016,4,14))]
+    df_12_2 = df[(df['t'] >= dt.datetime(2016,4,12)) & (df['t'] < dt.datetime(2016,4,14))]
+    print(df_12_2.head())
+
+
+
 
 
     print('pd--------------------end')
