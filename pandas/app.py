@@ -110,9 +110,10 @@ def pd_main():
     print('pivot---')
     df10_1 = df.drop('ex1', axis=1)
     df10_2 = pd.pivot_table(df10_1,index="k", columns="t", aggfunc='mean')
-    # df10_２ = pd.pivot_table(df, values="k",index="Survived", columns="Embarked", aggfunc='mean')
     print(df10_2)
     df10_2.to_csv('output_df10_2.csv')
+    print('---')
+    # df10_3 = pd.pivot_table(df10_1,index="k", values="v", columns="t", aggfunc='mean')
 
     print('df11---')
     print('datetime変換')
@@ -131,6 +132,13 @@ def pd_main():
     df_12_2 = df[(df['t'] >= dt.datetime(2016,4,12)) & (df['t'] < dt.datetime(2016,4,14))]
     print(df_12_2.head())
 
+    print('df13---')
+    df13_1 = df.drop('ex1', axis=1)
+    df13_2 = pd.pivot_table(df13_1,index=["k"], columns="t", aggfunc='mean')
+    print(df13_2)
+    df13_3 = df13_2.loc['a']
+    print(df13_3)
+    df13_3.to_csv('output_df13_3.csv')
 
 
 
