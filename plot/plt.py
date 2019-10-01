@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
-import seaborn as sns
 import pandas as pd
 import numpy as np
 from datetime import datetime
@@ -24,11 +23,6 @@ def read_scatter():
 def read_datetime():
     df = pd.read_csv("input/datetime.csv")
     df['timestamp'] = df['timestamp'].apply(lambda x: datetime.strptime(x, '%Y-%m-%dT%H:%M:%SZ'))
-    return df
-
-
-def read_sns():
-    df = pd.read_csv("input/sns.csv")
     return df
 
 
@@ -106,48 +100,20 @@ def datetime_line(df):
     plt.show()
 
 
-def sns_pairplot(df):
-    df.head()
-    cols = ['x1', 'x2', 'x3', 'x4', 'x5']
-    sns.pairplot(df[cols], height=2.5)
-    plt.tight_layout()
-    plt.savefig('sns_pairplot.png', dpi=300)
-    plt.show()
-
-
-def sns_heatmap(df):
-    cols1 = df.columns
-    cols2 = ['y1', 'y2', 'y3', 'y4', 'y5']
-    hm = sns.heatmap(df,
-                     cbar=True,
-                     annot=True,
-                     square=True,
-                     fmt='.2f',
-                     annot_kws={'size': 15},
-                     yticklabels=cols2,
-                     xticklabels=cols1)
-    plt.tight_layout()
-    plt.savefig('sns_heatmap.png', dpi=300)
-    plt.show()
-
-
 def main():
     # データ読み込み
     x, y = read_line()
     df_x, df_y = read_scatter()
     df_dt = read_datetime()
-    df_sns = read_sns()
 
     # グラフ作成
     # line1(x, y)
-    # line2(x, y)
+    line2(x, y)
     # multi_line(x, y)
     # scatter1(x, y)
     # scatter2(df_x, df_y)
     # bar1(x, y)
     # datetime_line(df_dt)
-    sns_pairplot(df_sns)
-    sns_heatmap(df_sns)
 
 
 if __name__ == '__main__':
