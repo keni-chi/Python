@@ -140,6 +140,20 @@ def pd_main():
     print(df13_3)
     df13_3.to_csv('output_df13_3.csv')
 
+    print('df14---')
+    df_14 = pd.DataFrame({'Kamome': [10, 10, 10, 3], 'Tiger': [1, 0, 1, 2]})
+    print(df_14)
+    df_14_1 = df_14.query('Kamome == 3')
+    print(df_14_1)
+    
+    # for i, row in df_14.iterrows():
+    # try:
+    #     name = df_people.loc[row.playerID]['name']
+    # except KeyError:
+    #     print('Warning', row.playerID)
+    #     name = 'Nanashi-San'
+    # df.at[i, 'player_name'] = name
+
 
 
 
