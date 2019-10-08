@@ -2,6 +2,11 @@ import pandas as pd
 from decimal import Decimal
 import decimal
 import datetime as dt
+import pandas_profiling as pdp
+from matplotlib import rcParams
+
+rcParams['font.family'] = 'sans-serif'
+rcParams['font.sans-serif'] = ['Hiragino Maru Gothic Pro', 'Yu Gothic', 'Meirio', 'Takao', 'IPAexGothic', 'IPAPGothic', 'Noto Sans CJK JP']
 
 
 def pd_main():
@@ -141,21 +146,22 @@ def pd_main():
     df13_3.to_csv('output_df13_3.csv')
 
     print('df14---')
-    df_14 = pd.DataFrame({'Kamome': [10, 10, 10, 3], 'Tiger': [1, 0, 1, 2]})
+    df_14 = pd.DataFrame({'ID': [10, 11, 12, 13], 'Value': [1, 0, 1, 2]})
     print(df_14)
-    df_14_1 = df_14.query('Kamome == 3')
+    df_14_1 = df_14.query('ID == 11')
+    print('001')
     print(df_14_1)
-    
-    # for i, row in df_14.iterrows():
-    # try:
-    #     name = df_people.loc[row.playerID]['name']
-    # except KeyError:
-    #     print('Warning', row.playerID)
-    #     name = 'Nanashi-San'
-    # df.at[i, 'player_name'] = name
+    print('002')
+    print(df_14.at[0, 'ID'])
+    print(df_14.iat[0, 0])
+    print('003')
+    print(df_14.loc[0:1, 'ID'])
+    print(df_14.iloc[:2, 0])
 
-
-
+    print('df15-----------')
+    df_15 = pd.DataFrame({'ID': [10, 11, 12, 13], 'あいValue': [1, 0, 1, 2]})
+    profile = pdp.ProfileReport(df_15)
+    # profile.to_file(output_file="output.html")
 
     print('pd--------------------end')
 
