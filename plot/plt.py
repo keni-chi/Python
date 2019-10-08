@@ -3,6 +3,10 @@ import matplotlib.dates as mdates
 import pandas as pd
 import numpy as np
 from datetime import datetime
+from matplotlib import rcParams
+
+rcParams['font.family'] = 'sans-serif'
+rcParams['font.sans-serif'] = ['Hiragino Maru Gothic Pro', 'Yu Gothic', 'Meirio', 'Takao', 'IPAexGothic', 'IPAPGothic', 'Noto Sans CJK JP']
 
 
 def read_line():
@@ -38,6 +42,8 @@ def line2(x, y):
     ax.plot(x, y, label="data1", marker='o', linestyle='--', linewidth=3)
     plt.axvline(2, label="a", color="red", linestyle="--") 
     plt.axhline(20, label="b", color="green", linestyle="--") 
+    plt.xlabel('テストxlabel')
+    plt.ylabel('ylabel')
     plt.legend()
     plt.show()
 
