@@ -1,4 +1,6 @@
 # coding: utf-8
+import sys
+print(sys.version)
 
 def os_path_append():
     """"method_os."""
@@ -496,10 +498,10 @@ def reflection_sample():
 
     print('globalsを使うパターン----')
     import classes
-    cls = getattr(classes, 'Hoge')
+    cls = getattr(classes, 'HogeAbcDefGGhiJkl1Mno2')
     instance = cls()
     instance.get_name()  #=> 'hoge'
-    cls = getattr(classes, 'Fuga')
+    cls = getattr(classes, 'FugaAbcDefGGhiJkl1Mno2')
     instance = cls()
     instance.get_name()  #=> 'fuga'
 
