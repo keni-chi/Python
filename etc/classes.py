@@ -1,5 +1,3 @@
-print('aa')
-
 class HogeAbcDefGGhiJkl1Mno2(object):
 
     def __init__(self):
