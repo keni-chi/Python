@@ -4,18 +4,18 @@
 覚書である。順次記載予定。
 
 ## 詳細
-pep8 flake8 pycodestyle スタイルガイド
-pep257 pydocstyle
-flake8はpep8に加えて論理エラーの検出も行う。
+pep8 flake8 pycodestyle スタイルガイド  
+pep257 pydocstyle  
+flake8はpep8に加えて論理エラーの検出も行う。  
 
 ## 手順
-pip install flake8
-pip install flake8-docstrings
-flake8 xxxxx.py
+pip install flake8  
+pip install flake8-docstrings  
+flake8 xxxxx.py  
 
-pip install autopep8
-pip install autoDocstring
-autoDocstringのプラグインをインストール
+pip install autopep8  
+pip install autoDocstring  
+autoDocstringのプラグインをインストール  
 
 ### setting.json
 {
