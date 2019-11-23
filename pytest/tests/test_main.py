@@ -1,8 +1,11 @@
 import os
 import sys
+import pandas
+import pandas.testing as pd_testing
 import pytest
+
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from src.main import Calc
+from src.main import *
 # from tests import conftest as ct
 
 class TestCalc():
@@ -44,9 +47,6 @@ class TestTarget(object):
         print('test_patch_by_dummy_function----end')
 
 
-from src.main import CsvSample
-import pandas
-import pandas.testing as pd_testing
 class TestCsvSample():
     @pytest.mark.test01
     def test_csv_sample_1(self, func_comm):
