@@ -15,3 +15,13 @@ class Target(object):
 
     def get_const(self):
         return self.CONST_VALUE
+
+
+import pandas
+class CsvSample(object):
+    CONST_VALUE = 'foo'
+
+    def get_csv(self):
+        # testコード用のパス
+        df = pandas.read_csv('src/input.csv')
+        return df

@@ -42,3 +42,18 @@ class TestTarget(object):
         assert actual == 'ham'
         
         print('test_patch_by_dummy_function----end')
+
+
+from src.main import CsvSample
+import pandas
+import pandas.testing as pd_testing
+class TestCsvSample():
+    @pytest.mark.test01
+    def test_csv_sample_1(self, func_comm):
+        print('\n' + 'test_csv_sample_1----start')
+        result = CsvSample().get_csv()
+        print(result)
+        answer = pandas.read_csv('./tests/input.csv')
+        print(answer)
+        # assert x == answer
+        pd_testing.assert_frame_equal(result, answer)

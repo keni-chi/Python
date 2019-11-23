@@ -1,5 +1,9 @@
 [
   "tests/test_main.py::TestCalc::()::test_add_01",
   "tests/test_main.py::TestCalc::()::test_add_02",
-  "tests/test_main.py::TestTarget::()::test_patch_by_dummy_function"
+  "tests/test_main.py::TestTarget::()::test_patch_by_dummy_function",
+  "tests/test_main.py::TestCalc::test_add_01",
+  "tests/test_main.py::TestCalc::test_add_02",
+  "tests/test_main.py::TestTarget::test_patch_by_dummy_function",
+  "tests/test_main.py::TestCsvSample::test_csv_sample_1"
 ]
