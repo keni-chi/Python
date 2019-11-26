@@ -1,3 +1,5 @@
+import pandas
+
 class Calc: 
     def __init__(self, a, b):
         self.a = a
@@ -17,7 +19,6 @@ class Target(object):
         return self.CONST_VALUE
 
 
-import pandas
 class CsvSample(object):
     CONST_VALUE = 'foo'
 

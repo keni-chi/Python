@@ -55,5 +55,4 @@ class TestCsvSample():
         print(result)
         answer = pandas.read_csv('./tests/input.csv')
         print(answer)
-        # assert x == answer
         pd_testing.assert_frame_equal(result, answer)
