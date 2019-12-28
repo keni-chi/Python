@@ -33,12 +33,21 @@ def sns_heatmap(df):
     plt.show()
 
 
-def main():
-    # データ読み込み
-    df_sns = read_sns()
+def missing():
+    print('missing--------------start')
+    df = pd.read_csv("input/input_df.csv") 
+    hm = sns.heatmap(df.isnull(), cbar=False)
+    plt.tight_layout()
+    plt.savefig('missing.png', dpi=300)
+    plt.show()
 
+
+def main():
+    df_sns = read_sns()
     sns_pairplot(df_sns)
     sns_heatmap(df_sns)
+
+    missing()
 
 
 if __name__ == '__main__':
