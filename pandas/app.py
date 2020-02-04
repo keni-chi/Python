@@ -160,8 +160,17 @@ def pd_main():
 
     print('df15-----------')
     df_15 = pd.DataFrame({'ID': [10, 11, 12, 13], 'あいValue': [1, 0, 1, 2]})
-    profile = pdp.ProfileReport(df_15)
+    # profile = pdp.ProfileReport(df_15)
     # profile.to_file(output_file="output.html")
+
+    print('df16-----------')
+    df_16 = pd.DataFrame({'x1': [10, 11, 12, 13], 'x2': [1, 0, 1, 2], 'x3': [1, 0, 1, 2]})
+    print(df_16)
+    df_16a = df_16[(df_16['x1'] < 13) & (df_16['x2'] < 3) & ~(df_16['x3'] == 0)]
+    print(df_16a)
+    df_16b = df_16[(df_16['x1'] < 13) & (df_16['x2'] < 3) & (df_16['x3'] != 0)]
+    print(df_16b)
+
 
     print('pd--------------------end')
 
