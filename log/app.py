@@ -4,7 +4,7 @@ import logging
 
 # logger
 logger = log_util.setup_logger('{0}.log'.format(datetime.date.today()))
-logger.setLevel(logging.DEBUG)  # INFO, DEBUG
+# logger.setLevel(logging.DEBUG)  # INFO, DEBUG
 
 
 def main():
