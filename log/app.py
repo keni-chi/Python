@@ -3,8 +3,7 @@ import log_util
 import logging
 
 # logger
-log_folder = '{0}.log'.format(datetime.date.today())
-logger = log_util.setup_logger(log_folder)
+logger = log_util.setup_logger('{0}.log'.format(datetime.date.today()))
 logger.setLevel(logging.DEBUG)  # INFO, DEBUG
 
 
