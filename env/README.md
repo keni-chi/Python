@@ -30,6 +30,13 @@ pip install -r requirements/dev.txt
 ### freezeによる出力   
 pip freeze > requirements.txt     
 
+## anaconda
+conda create -n .con  // 仮想環境の作成
+activate .con  // 仮想環境の起動
+deactivate  // 仮想環境の終了
+conda remove -n .con --all  // 仮想環境の削除
+
+
 ## Pipenv
 - 手順
   - 準備   
