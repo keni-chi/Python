@@ -1,0 +1,67 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flask with matplotlib</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    function drawGraph1(obj) {
+        var idx = obj.selectedIndex;
+        var value = obj.options[idx].value;
+        var plotdata = document.getElementById('plotimg1');
+        $.get("/plot/" + value, function(data) {
+            plotdata.src = "data:image/png:base64," + data;
+        });
+    };
+    $(document).ready(function() {
+        //initialize components
+        var target = document.getElementById('selector1');
+        drawGraph1(target);
+    });
+    </script>
+
+    <script type="text/javascript">
+    function drawGraph2(obj) {
+        var idx = obj.selectedIndex;
+        var value = obj.options[idx].value;
+        var plotdata = document.getElementById('plotimg2');
+        $.get("/plot/" + value, function(data) {
+            plotdata.src = "data:image/png:base64," + data;
+        });
+    };
+    $(document).ready(function() {
+        //initialize components
+        var target = document.getElementById('selector2');
+        drawGraph2(target);
+    });
+    </script>
+</head>
+
+<body>
+    <h1>Plot Graph</h1>
+    <div>
+        <p>title1</p>
+        <select id=selector1 onchange="drawGraph1(this)">
+            <option value=11>11</option>
+            <option value=12 selected>12</option>
+            <option value=13>13</option>
+        </select>
+    </div>
+    <br/>
+    <img id=plotimg1></img>
+
+    <div>
+        <p>title2</p>
+        <select id=selector2 onchange="drawGraph2(this)">
+            <option value=1>1</option>
+            <option value=2 selected>2</option>
+            <option value=3>3</option>
+        </select>
+
+    </div>
+    <br/>
+    <img id=plotimg2></img>
+</body>
+
+</html>
