@@ -723,7 +723,7 @@ def main():
     read_json()
     yaml_sample()
     csv_sample()
-    excel_sample()
+    #excel_sample()
 
     print('クラス、外部関数================================')
     os_path_append()
