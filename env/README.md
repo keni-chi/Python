@@ -166,6 +166,31 @@ make setup
 make init  
 make test  
 
+
+## base
+python -m venv .venv
+.venv\Scripts\activate.bat
+
+# 事前ダウンロード
+## pip
+https://tech-diary.net/python-library-offline-install/
+whlファイルをダウンロードする
+
+## notebook
+https://qiita.com/hoto17296/items/c4213a9f76ba9e6d5b22
+pip download --dest=local_lib notebook==6.4.0
+
+## pip
+<!-- python -m pip install --upgrade pip -->
+pip uninstall pip
+python -m easy_install pip-21.1.2-py3-none-any.whl
+
+## local notebook install
+<!-- pip install notebook==5.7.5 -->
+py -m pip install --no-index --find-links=local_lib notebook
+
+
+
 ## 参考
 [概要](http://www.zopfco.de/entry/2017/04/03/233811)  
 [pipenv構築](https://qiita.com/QUANON/items/4a371651b07bb61fde41)   
