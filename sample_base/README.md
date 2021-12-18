@@ -1,0 +1,1 @@
+powershell ./make.ps1
