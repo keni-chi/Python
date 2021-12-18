@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from logging import getLogger, StreamHandler, Formatter, FileHandler, DEBUG
 
 class LogUtil:
