@@ -16,7 +16,7 @@ class LogUtil:
         sh.setFormatter(formatter)
         logger.addHandler(sh)
 
-        fh = FileHandler(log_folder)
+        fh = FileHandler(log_folder, encoding='utf-8')
         fh.setLevel(DEBUG)
         fh_formatter = Formatter('%(asctime)s - %(filename)s - %(lineno)d - %(levelname)s - %(message)s')
         # fh_formatter = Formatter('%(asctime)s - %(filename)s - %(name)s - %(lineno)d - %(levelname)s - %(message)s')

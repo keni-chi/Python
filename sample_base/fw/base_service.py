@@ -4,10 +4,10 @@ from abc import ABC, abstractmethod
 class BaseService(ABC):
 
     def __init__(self, logger):
-        self.logger = logger
+        pass
 
     @abstractmethod
-    def get_data(self):
+    def init(self):
         pass
 
     @abstractmethod
@@ -15,16 +15,20 @@ class BaseService(ABC):
         pass
 
     @abstractmethod
-    def main_processing(self):
+    def run(self):
         pass
 
     def execute(self):
         self.logger.info('execute---------start')
         try:
-            self.get_data()
+            # # keyエラーでfwエラーの動作確認時にコメントイン
+            # x = {'k': 'v'}
+            # y = x['a']
+
+            self.init()
             self.preprocessing()
-            self.main_processing()
+            self.run()
+
             self.logger.info('execute---------end')
         except Exception as e:
-            self.logger.exception(f'CODE001: {e}')
-            
+            self.logger.exception('[code:fw001] サンプルfwエラーのメッセージ')

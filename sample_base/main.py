@@ -1,11 +1,17 @@
+# -*- coding: utf-8 -*-
+# パスの設定
 import  os, sys
 sys.path.append('./fw')
-from app_service import AppService
+
+# ログの準備
 from fw.log_util import LogUtil
 import datetime
 import logging
 logger = LogUtil.setup_logger('./log/{0}.log'.format(datetime.date.today()))
 logger.setLevel(logging.INFO)  # INFO, DEBUG
+
+# 必要なモジュールをimport
+from app_service import AppService
 
 
 def main():
