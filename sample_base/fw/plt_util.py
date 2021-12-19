@@ -2,7 +2,7 @@
 import matplotlib.pyplot as plt
 
 
-class VizualizeUtil:
+class PltUtil:
     def __init__(self):
         pass
 

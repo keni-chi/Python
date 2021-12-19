@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from fw.base_service import BaseService
 from fw.error_util import AppException
-from fw.vizualize_util import VizualizeUtil
+from fw.plt_util import PltUtil
 
 
 class AppService(BaseService):
@@ -59,7 +59,7 @@ class AppService(BaseService):
 
         # 予測と正解の比較グラフの出力
         file_path = 'data/output_fig/test.png'
-        VizualizeUtil.plot_pred_and_actual(file_path, y_test.tolist(), y_test_pred)
+        PltUtil.plot_pred_and_actual(file_path, y_test.tolist(), y_test_pred)
 
         # 意図的にエラーを発生させてAppServiceの以降の処理を実行しない
         raise AppException('[code:app001] サンプルappエラーのメッセージ')
