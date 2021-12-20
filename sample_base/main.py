@@ -4,7 +4,7 @@ import  os, sys
 sys.path.append('./fw')
 
 # ログの準備
-from fw.log_util import LogUtil
+from fw.src.log_util import LogUtil
 import datetime
 import logging
 logger = LogUtil.setup_logger('./log/{0}.log'.format(datetime.date.today()))

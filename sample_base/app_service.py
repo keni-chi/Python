@@ -3,9 +3,9 @@ import pandas as pd
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from fw.base_service import BaseService
-from fw.error_util import AppException
-from fw.plt_util import PltUtil
+from fw.src.base_service import BaseService
+from fw.src.error_util import AppException
+from fw.src.plt_util import PltUtil
 
 
 class AppService(BaseService):
