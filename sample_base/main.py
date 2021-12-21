@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 # パスの設定
 import  os, sys
-sys.path.append('./fw')
+sys.path.append('./customframework')
 
 # ログの準備
-from fw.src.log_util import LogUtil
+from customframework.src.log_util import LogUtil
 import datetime
 import logging
 logger = LogUtil.setup_logger('./log/{0}.log'.format(datetime.date.today()))
-logger.setLevel(logging.INFO)  # INFO, DEBUG
+logger.setLevel(logging.DEBUG)  # INFO, DEBUG
 
 # 必要なモジュールをimport
 from app_service import AppService

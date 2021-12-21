@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from abc import ABC, abstractmethod
 
-class BaseService(ABC):
 
+class BaseService(ABC):
     def __init__(self, logger):
         pass
 
@@ -21,7 +21,7 @@ class BaseService(ABC):
     def execute(self):
         self.logger.info('execute---------start')
         try:
-            # # keyエラーでfwエラーの動作確認時にコメントイン
+            # # keyエラーで動作確認時にコメントイン
             # x = {'k': 'v'}
             # y = x['a']
 
@@ -31,4 +31,4 @@ class BaseService(ABC):
 
             self.logger.info('execute---------end')
         except Exception as e:
-            self.logger.exception('[code:fw001] サンプルfwエラーのメッセージ')
+            self.logger.exception('[code:fw001] BaseServiceエラー')

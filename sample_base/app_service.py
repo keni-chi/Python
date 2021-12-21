@@ -3,9 +3,9 @@ import pandas as pd
 from sklearn.datasets import load_iris
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from fw.src.base_service import BaseService
-from fw.src.error_util import AppException
-from fw.src.plt_util import PltUtil
+from customframework.src.base_service import BaseService
+from customframework.src.error_util import AppException
+from customframework.src.plt_util import PltUtil
 
 
 class AppService(BaseService):
@@ -15,24 +15,24 @@ class AppService(BaseService):
         self.df_Xy = None
 
     def init(self):
-        self.logger.info('init---------start')
+        self.logger.debug('init---------start')
         # TODO: データの読み込みやdfへの整形など
         iris = load_iris()
         df_X = pd.DataFrame(iris.data, columns=iris.feature_names)
         df_y = pd.DataFrame(iris.target, columns=[self.target_name])
         self.df_Xy = pd.concat([df_X, df_y], axis=1)
-        self.logger.info('init---------end')
+        self.logger.debug('init---------end')
 
     def preprocessing(self):
-        self.logger.info('preprocessing---------start')
+        self.logger.debug('preprocessing---------start')
         # TODO: 前処理（外れ値チェック、欠損値処理、名寄せなど）
 
         # 欠損値を含む行を削除        
         self.df_Xy = self.df_Xy.dropna(how='any')
-        self.logger.info('preprocessing---------end')
+        self.logger.debug('preprocessing---------end')
 
     def run(self):
-        self.logger.info('run---------start')
+        self.logger.debug('run---------start')
         # TODO: アプリ処理
 
         # 説明変数と目的変数へ分割
@@ -64,7 +64,7 @@ class AppService(BaseService):
         # 意図的にエラーを発生させてAppServiceの以降の処理を実行しない
         raise AppException('[code:app001] サンプルappエラーのメッセージ')
         print('これは実行されない')
-        self.logger.info('run---------end')
+        self.logger.debug('run---------end')
 
     def calc_mean(self, df_X):
         return df_X.mean()
