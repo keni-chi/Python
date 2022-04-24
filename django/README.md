@@ -3,4 +3,5 @@
 
 ## 参考
 [Django での static files の扱い方まとめ](https://hideharaaws.hatenablog.com/entry/2014/12/12/230825)
-[Django事始め: 3_Apache連携](https://qiita.com/roy29fuku/items/578de62fbdd65f8ffbaa)  
+[Windows10でDjangoの動作環境を構築する②【ソフトの連携編１】](https://www.1one-market.com/?p=593)  
+[WindowsでDjangoを使うためのApacheとPythonのインストール方法](https://tamapoco.com/archives/7676)  
