@@ -1,0 +1,15 @@
+,x1,x2,x3
+0,<Selector xpath='//td[1]/text()' data='Standard_D2pls_v5'>,<Selector xpath='//td[2]/text()' data='2'>,<Selector xpath='//td[3]/text()' data='4'>
+1,<Selector xpath='//td[1]/text()' data='Standard_D4pls_v5'>,<Selector xpath='//td[2]/text()' data='4'>,<Selector xpath='//td[3]/text()' data='8'>
+2,<Selector xpath='//td[1]/text()' data='Standard_D8pls_v5'>,<Selector xpath='//td[2]/text()' data='8'>,<Selector xpath='//td[3]/text()' data='16'>
+3,<Selector xpath='//td[1]/text()' data='Standard_D16pls_v5'>,<Selector xpath='//td[2]/text()' data='16'>,<Selector xpath='//td[3]/text()' data='32'>
+4,<Selector xpath='//td[1]/text()' data='Standard_D32pls_v5'>,<Selector xpath='//td[2]/text()' data='32'>,<Selector xpath='//td[3]/text()' data='64'>
+5,<Selector xpath='//td[1]/text()' data='Standard_D48pls_v5'>,<Selector xpath='//td[2]/text()' data='48'>,<Selector xpath='//td[3]/text()' data='96'>
+6,<Selector xpath='//td[1]/text()' data='Standard_D64pls_v5'>,<Selector xpath='//td[2]/text()' data='64'>,<Selector xpath='//td[3]/text()' data='128'>
+7,<Selector xpath='//td[1]/text()' data='Standard_D2plds_v5'>,<Selector xpath='//td[2]/text()' data='2'>,<Selector xpath='//td[3]/text()' data='4'>
+8,<Selector xpath='//td[1]/text()' data='Standard_D4plds_v5'>,<Selector xpath='//td[2]/text()' data='4'>,<Selector xpath='//td[3]/text()' data='8'>
+9,<Selector xpath='//td[1]/text()' data='Standard_D8plds_v5'>,<Selector xpath='//td[2]/text()' data='8'>,<Selector xpath='//td[3]/text()' data='16'>
+10,<Selector xpath='//td[1]/text()' data='Standard_D16plds_v5'>,<Selector xpath='//td[2]/text()' data='16'>,<Selector xpath='//td[3]/text()' data='32'>
+11,<Selector xpath='//td[1]/text()' data='Standard_D32plds_v5'>,<Selector xpath='//td[2]/text()' data='32'>,<Selector xpath='//td[3]/text()' data='64'>
+12,<Selector xpath='//td[1]/text()' data='Standard_D48plds_v5'>,<Selector xpath='//td[2]/text()' data='48'>,<Selector xpath='//td[3]/text()' data='96'>
+13,<Selector xpath='//td[1]/text()' data='Standard_D64plds_v5'>,<Selector xpath='//td[2]/text()' data='64'>,<Selector xpath='//td[3]/text()' data='128'>
