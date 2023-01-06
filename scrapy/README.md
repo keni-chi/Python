@@ -58,6 +58,18 @@ scrapy-selenium
 scrapy-seleniumでの次のページの方法
     response.urljoin(next_page)
 
+Scrapy-SeleniumでのJS対応
+    HTMLコードからの要素の取得
+        html = driver.page_source
+        selector = Selector(text=html)
+        selector.xpath('')
+
+ログイン画面
+    ブラウザでの確認
+        chromeのディベロッパーツールで、ネットワーク、all、preserve logにチェックを入れる
+        clearボタンでログを消去
+        300台でリダイレクト成功
+    FormRequestクラスで、form送信することで、id,pass以外にtokenを送信
 
 
 
